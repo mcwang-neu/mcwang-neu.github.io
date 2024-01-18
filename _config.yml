@@ -80,9 +80,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Mingcan Wang"
+  name             : " Mingcan Wang"
   avatar           : "mcwang.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "CS bachelor"
   location         : "China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"

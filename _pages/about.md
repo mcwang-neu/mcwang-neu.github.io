@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Mingcan Wang received theBSdegree in information and computing science from [Nanjing University of information Science and Technology (NUIST)](https://en.nuist.edu.cn/main.htm), China. And he is currently working towards the MSc degree with the School of Computer Science and Engineering, [Northeastern University](https://english.neu.edu.cn/), China. His research interests includegene regulatory network and bioinformatics. 
+Mingcan Wang received theBSdegree in information and computing science from [*Nanjing University of information Science and Technology (NUIST)*, China](https://en.nuist.edu.cn/main.htm), China. And he is currently working towards the MSc degree with the School of Computer Science and Engineering, [*Northeastern University*, China](https://english.neu.edu.cn/). His research interests includegene regulatory network and bioinformatics. 
 
 A data-driven personal website
 ======

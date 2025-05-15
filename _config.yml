@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "China-mainland"
-title                    : "MCWANG-NEU"
+title                    : "MCWANG@NEU"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
@@ -80,8 +80,8 @@ analytics:
 
 # Site Author
 author:
-  name             : " Mingcan Wang"
-  avatar           : "mcwang.png"
+  name             : "Mingcan Wang"
+  avatar           : "profile.png"
   bio              : "CS bachelor"
   location         : "China"
   employer         :

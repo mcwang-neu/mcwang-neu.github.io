@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复制多行文本示例</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <button id="copyBtn">复制多行文字到剪贴板</button>
+
+  <script>
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const textToCopy = `1 + 2 = 3\n4 + 5 = 9\n6 + 7 = 13`;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        alert('多行文字已复制到剪贴板！');
+      } catch (err) {
+        console.error('复制失败:', err);
+        alert('复制失败，请重试。');
+      }
+    });
+  </script>
+</body>
+</html>

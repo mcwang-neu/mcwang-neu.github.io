@@ -11,20 +11,19 @@ Mingcan Wang is a 2nd-year PhD candidate with Northeastern University, China. Be
 
 Pubs
 ======
-## 点击复制多行内容示例
 
-<button id="copyBtn">📋 点击复制多行文字</button>
+<button id="copyBtn">📋 Copy Pubs to text</button>
 
 <script>
 document.getElementById('copyBtn').addEventListener('click', async () => {
-  const text = `第一行文字
-第二行文字
-第三行文字`;
+  const text = `**Mingcan Wang**, *et al*. BFMDDT: A Decision-Tree-Based Gene Regulatory Network Inference from Multi-Type Datasets. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 22(4): 1778-1788.  (SCI Q1, CCF-B). 
+  
+J. Xin, **Mingcan Wang**, *et al*. BIC-LP: A Hybrid Higher-order Dynamic Bayesian Network Score Function for Gene Regulatory Network Reconstruction. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 21(1): 188-199, 2024. (SCI Q1, CCF-B).`;
   try {
     await navigator.clipboard.writeText(text);
-    alert('已复制到剪贴板！');
+    alert('Done!');
   } catch (err) {
-    console.error('复制失败:', err);
+    console.error('Error', err);
   }
 });
 </script>

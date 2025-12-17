@@ -9,7 +9,7 @@ redirect_from:
 ---
 Mingcan Wang is a 2nd-year PhD candidate with Northeastern University, China. Before this, he received the BS. degree in information and computing science from [*Nanjing University of information Science and Technology (NUIST)*, China](https://en.nuist.edu.cn/main.htm) and the master’s degree in computer science and technology from [*Northeastern University*, China](https://english.neu.edu.cn/). His research interests include graph mining, data management, gene regulatory network and bioinformatics. 
 
-<a href="https://www.baidu.com" target="_blank"> Example</a>
+<a href="[https://www.baidu.com](https://github.com/mcwang-neu/mcwang-neu.github.io/blob/master/copy.html)" target="_blank"> Copy2Text</a>
 
 Pubs
 ======

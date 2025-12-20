@@ -1,48 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>复制多行文本示例</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>点击复制并退出</title>
   <style>
+    :root { --fg:#0b1220; --bg:#f7f8fb; --accent:#16a34a; --muted:#64748b; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
     body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f7f7f7;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 70% -10%, #e6f3ff 0, transparent 60%), var(--bg);
+      color: var(--fg);
+      display: grid; place-items: center;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #45a049;
+    .card {
+      width: min(680px, 92vw);
+      padding: 22px 22px 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(2, 6, 23, .08);
+      background: #fff;
+      text-align: center;
+      transition: transform .15s ease;
     }
+    .card:active { transform: scale(0.995); }
+    h1 { font-size: 20px; margin: 0 0 6px; }
+    p  { margin: 6px 0 0; color: var(--muted); line-height: 1.5; }
+    .hint { font-size: 14px; margin-top: 10px; }
+    .toast {
+      position: fixed; inset: 0; display: none; place-items: center;
+      background: rgba(15, 23, 42, .4); backdrop-filter: blur(2px);
+    }
+    .toast .box {
+      background:#fff; border-left: 6px solid var(--accent);
+      padding: 18px 20px; border-radius: 12px; min-width: 240px;
+      text-align: left; box-shadow: 0 10px 30px rgba(2,6,23,.16);
+      animation: pop .18s ease;
+    }
+    .ok { color: var(--accent); font-weight: 700; }
+    .count { font-variant-numeric: tabular-nums; }
+    @keyframes pop { from { transform: translateY(6px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
   </style>
 </head>
 <body>
-  <button id="copyBtn">复制多行文字到剪贴板</button>
+  <div class="card" id="card">
+    <h1>点击此页面，即可复制文本并自动退出</h1>
+    <p>复制到剪贴板 → 显示成功提示 → <strong>1 秒</strong>后尝试关闭页面。</p>
+    <p class="hint">（若浏览器不允许关闭窗口，将自动后退或跳到空白页）</p>
+  </div>
 
-  <script>
-    document.getElementById('copyBtn').addEventListener('click', async () => {
-      const textToCopy = `1 + 2 = 3\n4 + 5 = 9\n6 + 7 = 13`;
+  <div class="toast" id="toast" aria-live="assertive">
+    <div class="box">
+      <div><span class="ok">✔ 复制成功</span></div>
+      <div style="margin-top:6px;">将于 <span class="count" id="sec">1</span>s 后自动退出…</div>
+    </div>
+  </div>
 
+<script>
+(async () => {
+  // ★★★ 把你要复制的多行内容放在这里 ★★★
+  const content = [
+    "Junchang Xin, Mingcan Wang, Xiaoyuan Wang, Kaifu Long, Zhiqiong Wang. Towards Lakehouse Federation in Computing Power Networks. International Conference on Data Mining 2025, Demo paper.",
+    "Mingcan Wang, Junchang Xin, Luxuan Qu, Kaifu Long, Zhiqiong Wang. BFMDDT: A Decision-Tree-Based Gene Regulatory Network Inference from Multi-Type Datasets. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 22(4): 1778-1788. ",
+    "Junchang Xin, Mingcan Wang, Luxuan Qu, Qi Chen, Weiyiqi Wang, Zhiqiong Wang. BIC-LP: A Hybrid Higher-order Dynamic Bayesian Network Score Function for Gene Regulatory Network Reconstruction. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 21(1): 188-199, 2024. "
+  ].join("\n");
+
+  const card  = document.getElementById('card');
+  const toast = document.getElementById('toast');
+  const secEl = document.getElementById('sec');
+  let done = false;
+
+  function showToast(seconds=1){
+    secEl.textContent = String(seconds);
+    toast.style.display = 'grid';
+  }
+
+  function tryCloseOrExit(){
+    // 多策略尝试关闭/退出
+    // 1) 直接关闭（仅对脚本打开的窗口可靠）
+    window.close();
+
+    // 2) 覆盖同窗并关闭（部分移动端）
+    setTimeout(() => {
       try {
-        await navigator.clipboard.writeText(textToCopy);
-        alert('多行文字已复制到剪贴板！');
-      } catch (err) {
-        console.error('复制失败:', err);
-        alert('复制失败，请重试。');
+        window.open('', '_self');
+        window.close();
+      } catch (_) {}
+    }, 50);
+
+    // 3) 回退；若无历史，则跳空白页
+    setTimeout(() => {
+      if (history.length > 1) {
+        history.back();
+      } else {
+        location.replace('about:blank');
       }
-    });
-  </script>
+    }, 150);
+  }
+
+  async function copyText(text){
+    // 优先使用异步 Clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+
+    // 回退方案：创建隐藏 textarea 选中并复制
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  async function handleClick(){
+    if (done) return;
+    done = true;
+    document.body.style.pointerEvents = 'none'; // 防抖
+
+    try {
+      const ok = await copyText(content);
+      if (!ok) throw new Error('fallback copy failed');
+
+      // 展示成功提示与 1 秒倒计时
+      showToast(1);
+
+      // 精准 1s 之后退出；同时给个 900ms 的视觉倒计时更新
+      let remain = 1;
+      const ticker = setInterval(() => {
+        remain -= 1;
+        if (remain <= 0) clearInterval(ticker);
+        secEl.textContent = Math.max(remain, 0);
+      }, 900);
+
+      setTimeout(tryCloseOrExit, 1000);
+    } catch (e) {
+      // 失败提示（可选）
+      alert('复制失败：' + e.message + '\n请检查是否授予剪贴板权限。');
+      done = false;
+      document.body.style.pointerEvents = '';
+    }
+  }
+
+  // 点击整页触发
+  document.addEventListener('click', handleClick, { once: true });
+
+  // 也支持按回车触发（无障碍）
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleClick();
+  }, { once: true });
+})();
+</script>
 </body>
 </html>

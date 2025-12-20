@@ -18,17 +18,17 @@ Pubs
 
 <script>
 document.getElementById('copyBtn').addEventListener('click', async () => {
-  const text = `Mingcan Wang, et al. BFMDDT: A Decision-Tree-Based Gene Regulatory Network Inference from Multi-Type Datasets. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 22(4): 1778-1788.  (SCI Q1, CCF-B). 
-\n\n
-J. Xin, Mingcan Wang, et al. BIC-LP: A Hybrid Higher-order Dynamic Bayesian Network Score Function for Gene Regulatory Network Reconstruction. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 21(1): 188-199, 2024. (SCI Q1, CCF-B).`;
+
   try {
-    await navigator.clipboard.writeText(text);
-    alert('Done!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+    // 在新标签页打开 www.github.com
+    window.open("https://mcwang-neu.github.io/copy.html", '_blank');
   } catch (err) {
     console.error('Error', err);
+    alert('Error! Please check!');
   }
 });
 </script>
+
 
 
 J. Xin, **Mingcan Wang**, *et al*. Towards Lakehouse Federation in Computing Power Networks. International Conference on Data Mining 2025 (ICDM 2025, *Demo* Paper). 

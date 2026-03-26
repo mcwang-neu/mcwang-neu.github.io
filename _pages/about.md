@@ -14,7 +14,7 @@ Pubs
 
 <a href="https://mcwang-neu.github.io/copy.html" target="_blank">📋 Copy Pubs to Text</a>
 
-J. Xin, **Mingcan Wang**, *et al*. Towards Lakehouse Federation in Computing Power Networks. International Conference on Data Mining 2025 (ICDM 2025, *Demo* Paper). 
+J. Xin, **Mingcan Wang**, *et al*. Towards Lakehouse Federation in Computing Power Networks. International Conference on Data Mining 2025 (ICDM 2025, *Demo* Paper). [[Link](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11416418&tag=1)] 
 
 **Mingcan Wang**, *et al*. BFMDDT: A Decision-Tree-Based Gene Regulatory Network Inference from Multi-Type Datasets. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 22(4): 1778-1788.  (SCI Q1, CCF-B). [[Link](https://ieeexplore.ieee.org/document/11006006)] [[Github](https://github.com/mcwang-neu/BFMDDT)]
 

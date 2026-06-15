@@ -9,7 +9,7 @@ redirect_from:
 ---
 Mingcan Wang is a 2nd-year PhD candidate with Northeastern University, China. Before this, he received the BS. degree in information and computing science from [*Nanjing University of information Science and Technology (NUIST)*, China](https://en.nuist.edu.cn/main.htm) and the master’s degree in computer science and technology from [*Northeastern University*, China](https://english.neu.edu.cn/). Benefiting from his advisor’s rise-up guidance and the co-workers' talents and efforts, he has published academic papers in first class venues, such as TCBB and ICDM, as the first student author. Meanwhile, he has co-authored many papers in top-tier CS venues, such as KBS, NN and DASFAA. His research interests include graph mining, data management, gene regulatory network and bioinformatics. 
 
-Granted by CSC, he is going to complete one-year research practicum with [UNSW, Sydney](https://china.unsw.edu.au/), hosted by [Data and Knowledge
+Granted by CSC, he is going to complete one-year research practicum with [*UNSW*, *Sydney*](https://china.unsw.edu.au/), hosted by [Data and Knowledge
 Research Group (DKR)](https://unswdb.github.io/index.html).
 
 Pubs

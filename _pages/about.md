@@ -9,6 +9,9 @@ redirect_from:
 ---
 Mingcan Wang is a 2nd-year PhD candidate with Northeastern University, China. Before this, he received the BS. degree in information and computing science from [*Nanjing University of information Science and Technology (NUIST)*, China](https://en.nuist.edu.cn/main.htm) and the master’s degree in computer science and technology from [*Northeastern University*, China](https://english.neu.edu.cn/). Benefiting from his advisor’s rise-up guidance and the co-workers' talents and efforts, he has published academic papers in first class venues, such as TCBB and ICDM, as the first student author. Meanwhile, he has co-authored many papers in top-tier CS venues, such as KBS, NN and DASFAA. His research interests include graph mining, data management, gene regulatory network and bioinformatics. 
 
+Granted by CSC, he is going to complete one-year research practicum with [UNSW, Sydney](https://china.unsw.edu.au/), hosted by [Data and Knowledge
+Research Group (DKR)](https://unswdb.github.io/index.html).
+
 Pubs
 ======
 
@@ -20,6 +23,12 @@ J. Xin, **Mingcan Wang**, *et al*. Towards Lakehouse Federation in Computing Pow
 
 J. Xin, **Mingcan Wang**, *et al*. BIC-LP: A Hybrid Higher-order Dynamic Bayesian Network Score Function for Gene Regulatory Network Reconstruction. IEEE-ACM Transactions on Computational Biology and Bioinformatics (IEEE-ACM TCBB), 21(1): 188-199, 2024. (SCI Q1, CCF-B). [[Link](https://ieeexplore.ieee.org/document/10368359)] [[Github](https://github.com/mcwang-neu/BIC-LP#:~:text=BIC-LP%20is%20a%20hybrid%20dynamic%20Bayesian%20network%20score,challenges%20for%20the%20reverse%20engineering%20of%20GRN%20reconstruction.)]
 
+J Xin, S Liu, **Mingcan Wang**, *et al*. ANS-CD: A Novel Label-Efficient Community Detection Approach via Active Node Selection. In Proceedings of The 31st International Conference on Database Systems for Advanced Application  (DASFAA 2026), LNCS 16536: 351–366, 2026. (CCF-B) [[Link](https://link.springer.com/chapter/10.1007/978-981-92-0366-6_22)]
 
+Academic Services
+======
+
+Reviewer for Journals including *cluster computing* and *The Journal of Supercomputing*. 
+Reviewer for Conferences including BIBE 2026. 
 
 
